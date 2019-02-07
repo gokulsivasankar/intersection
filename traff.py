@@ -11,7 +11,6 @@ def initial():
         v = np.empty(shape=[1, 0]), \
         target = np.empty(shape=[1, 0]),\
         orientation = np.empty(shape=[1, 0]))
-    
     return traffic
 
 
@@ -21,6 +20,5 @@ def update(traffic,x_car,y_car,v_car,orientation_car,target_car):
     traffic.v = np.append(traffic.v, [[v_car]], axis=1)
     traffic.target = np.append(traffic.target, [[target_car]], axis=1)
     traffic.orientation = np.append(traffic.orientation, 
-    [[orientation_car]],axis=1)
-
+                        [[orientation_car]],axis=1)
     return traffic
