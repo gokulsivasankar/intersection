@@ -2,8 +2,6 @@
 # 
 # Main file for the intersection environment simulator
 
-import sys
-import os
 import math
 
 import get_params
