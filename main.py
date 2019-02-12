@@ -66,3 +66,5 @@ for episode in range(1,params.max_episode+1):
         for car_id in range(1,params.num_cars+1):
             a = DecisionTree_L0(X_old, car_id, action_space, params.t_step_DT) # Call the decision tree function
             print(a)
+
+            print()
