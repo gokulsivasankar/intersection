@@ -26,7 +26,7 @@ for episode in range(1,params.max_episode+1):
     # traffic update
     traffic = traff.update(traffic,x_car,y_car,orientation_car,v_car,target_car)
 
-    Level_ratio = np.matrix('0.1, 0.6, 0.3;0.1, 0.6, 0.3') # Initial guess for the level ratio (0 1 2)
+    Level_ratio = np.matrix('0.1, 0.6, 0.3; 0.1, 0.6, 0.3') # Initial guess for the level ratio (0 1 2)
 
     for id in range(2,params.num_cars+1):
         if id==2:
@@ -45,7 +45,7 @@ for episode in range(1,params.max_episode+1):
     
     X_old = initial_state
     
-    a=1;
+    a=1
     for step in range(1,51):
         plt.figure(1)
         plt.plot(step, Level_ratio[0,0], 'b.')
@@ -64,10 +64,27 @@ for episode in range(1,params.max_episode+1):
         L0_action_id = [{}]*params.num_cars
         L0_Q_value = [{}]*params.num_cars
         for car_id in range(1,params.num_cars+1):
-            a = DecisionTree_L0(X_old, car_id, action_space, params.t_step_DT) # Call the decision tree function
-            print(a)
-
-            print()
-            print()
-            print()
+            L0_Q_value[car_id-1], L0_action_id[car_id-1]= DecisionTree_L0(X_old, car_id, action_space, params.t_step_DT) # Call the decision tree function
+           
+        X_pseudo_L0=Environment_Multi(X_old, L0_action_id, t_step_DT)
+        
+        X_pseudo_L0_Id =[{}]*params.num_cars
+        for car_id in range(1,params.num_cars+1):
+            X_pseudo_L0_ID[car_id-1] = X_pseudo_L0
+            for pre_step in range(0, action_space.size):
+                X_psuedo_L0_ID[car_id-1][pre_]
+        
+        
+        # L-1
+        
+        
+        # L-2
+        
+        
+        # D-2
+        
+        
+        
+        # L-3
+        
             
